@@ -1,7 +1,9 @@
 <template>
   <layout name="LayoutDefault">
     <div class="Home">
-      <h1>Home</h1>
+      <h1>
+        Product List
+      </h1>
       <div v-for="(product, index) in products" :key="index">
         {{ product.brand }}
         {{ product.description }}

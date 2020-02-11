@@ -1,4 +1,4 @@
-import Home from './components/views/Home'
+import ProductList from './components/views/ProductList'
 import About from './components/About'
 
 export default {
@@ -7,12 +7,12 @@ export default {
     routes: [
         {
             path: '/',
-            component: Home
+            component: ProductList
         },
 
         {
             path: '/productList',
-            component: Home
+            component: ProductList
         },
 
         {
