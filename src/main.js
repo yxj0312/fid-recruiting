@@ -7,6 +7,7 @@ import routes from './routes'
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 
+import './assets/sass/app.scss';
 
 new Vue({
   render: h => h(App),
