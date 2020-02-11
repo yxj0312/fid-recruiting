@@ -1,4 +1,4 @@
-import Home from './components/Home'
+import Home from './components/views/Home'
 import About from './components/About'
 
 export default {
