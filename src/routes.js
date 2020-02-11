@@ -11,6 +11,11 @@ export default {
         },
 
         {
+            path: '/productList',
+            component: Home
+        },
+
+        {
             path: '/about',
             component: About
         },
