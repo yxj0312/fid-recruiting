@@ -2,7 +2,13 @@
   <layout name="LayoutDefault">
     <div class="Home">
       <h1>Home</h1>
-      
+      <div v-for="(product, index) in products" :key="index">
+        {{ product.brand }}
+        {{ product.description }}
+        {{ product.priceO }}
+        {{ product.priceR }}
+        {{ product.url }}
+      </div>
     </div>
   </layout>
 </template>
