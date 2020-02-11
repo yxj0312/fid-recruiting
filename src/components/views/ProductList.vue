@@ -5,6 +5,9 @@
         Product List
       </h1>
       <div v-for="(product, index) in products" :key="index">
+        <div v-for="(image, index) in product.images" :key="'image'+index">
+          <img :src=image alt="">
+        </div>
         {{ product.brand }}
         {{ product.description }}
         {{ product.priceO }}
