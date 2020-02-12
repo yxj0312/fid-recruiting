@@ -14,6 +14,11 @@ html {
     color: $neutral-400;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 *,
 *::before,
 *::after {

@@ -1,7 +1,11 @@
 <template>
-  <div class="layout-default__row">
-    <div class="layout-default__column">
-        <div class="layout-default__row header">
+  <div class="layout">
+    <header class="layout__header">
+        it is header
+    </header>
+
+    <!-- <div class="layout__column">
+        <div class="layout__row header">
           <header>
             <div class="main-bar" role="banner">
               <div class="logo">
@@ -20,11 +24,11 @@
             </nav>
           </header>
         </div>
-    </div>
-    <main class="layout-default__main">
+    </div> -->
+    <main >
       <slot/>
     </main>
-    <footer class="layout-default__footer">
+    <footer class="layout__footer">
       &copy; Awesome Company
     </footer>
   </div>

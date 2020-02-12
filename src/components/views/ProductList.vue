@@ -1,6 +1,15 @@
 <template>
-  <layout name="LayoutDefault">
-    <div class="layout-default__row">
+  <layout name="LayoutDefault" class="layout__main">
+    <div >
+      <aside class="layout-main__sidebar">
+        <strong>Navigation</strong>
+      </aside>
+      <div class="layout-main__content">
+        <h1>123</h1>
+          456
+      </div>
+    </div>
+    <!-- <div class="layout-default__row">
       <div class="layout-default__column side-nav-column grid--1of3">
         <div class="layout-default__row side-nav">
           <nav class="side-nav-container">
@@ -75,14 +84,14 @@
             </div>
           </div>
         </div>
-        <!-- <div v-for="(product, index) in products" :key="index">  
+        <div v-for="(product, index) in products" :key="index">  
           <div v-for="(image, index) in product.images" :key="'image'+index">
             <img :src=image alt="" v-if="image">
             <div v-else>Loading...</div> 
           </div>
-        </div> -->
+        </div>
       </div>
-    </div>
+    </div> -->
   </layout>
 </template>
 

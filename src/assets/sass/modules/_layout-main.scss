@@ -1,0 +1,23 @@
+.layout-main {
+    &__content {
+        margin-top: 1.5em;
+    }
+
+    &__sidebar {
+        padding: 1em;
+        border-radius: 3px;
+        background: rgba(147, 128, 108, 0.1);
+    }
+
+    @media (min-width: $break-lg) {
+        &__content {
+            flex: 1;
+            padding: 0 1.5em;
+            margin: 0;
+        }
+
+        &__nav {
+           flex: 0 0 12em;
+        }
+    }
+}
