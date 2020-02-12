@@ -21,14 +21,6 @@
           </header>
         </div>
     </div>
-    <!-- <nav class="layout-default__nav">
-      <router-link to="/">Product List</router-link> |
-      <router-link to="/about">About</router-link>
-
-      <div class="layout-default__user">
-        {{ user ? user.name : `Loading...` }}
-      </div>
-    </nav> -->
     <main class="layout-default__main">
       <slot/>
     </main>
