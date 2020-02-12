@@ -1,4 +1,8 @@
 // ===========================================
+// basic elements (body, h1), mixins, vars, vendors
+// ===========================================
+@import 'base/index';
+// ===========================================
 // Independent parts, main part of the app. Other word for modules: Components/Blocks
 // ===========================================
 @import 'modules/index';
