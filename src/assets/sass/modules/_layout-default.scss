@@ -1,7 +1,9 @@
 .layout-default {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100em;
-    margin: 0 auto;
-    background-color: color;
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100em;
+        margin: 0 auto;
+        background-color: red;
+    }
 }
