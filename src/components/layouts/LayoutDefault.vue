@@ -1,8 +1,6 @@
 <template>
   <div class="layout">
-    <header class="layout__header">
-        it is header
-    </header>
+    <layout-header></layout-header>
 
     <!-- <div class="layout__column">
         <div class="layout__row header">
@@ -25,7 +23,7 @@
           </header>
         </div>
     </div> -->
-    <main >
+    <main>
       <slot/>
     </main>
     <footer class="layout__footer">
@@ -35,14 +33,21 @@
 </template>
 
 <script>
+import LayoutHeader from './LayoutHeader';
 
 export default {
   name: `LayoutDefault`,
+
   data() {
     return {
       user: null,
     };
   },
+
+  components: {
+    LayoutHeader
+  },
+
   created() {
     // Simulate fetching user data.
     setTimeout(() => {
