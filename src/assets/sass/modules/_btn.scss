@@ -6,4 +6,10 @@
     height: 3em;
     margin: .5em 1em;
     flex: 0 0 33.33%;
+    cursor: pointer;
+
+    &:hover {
+        background: black;
+        color: white;
+    }
 }
