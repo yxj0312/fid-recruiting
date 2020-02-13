@@ -2,30 +2,10 @@
   <div class="layout">
     <layout-header></layout-header>
 
-    <!-- <div class="layout__column">
-        <div class="layout__row header">
-          <header>
-            <div class="main-bar" role="banner">
-              <div class="logo">
-                <div class="responsive-image">
-                  <img src="../../assets/logo/logo-peek-und-cloppenburg.03c0.svg" alt="P&C Logo" loading="auto">
-                </div>
-              </div>
-            </div>
-            <nav class="top-nav-container">
-              <ul class="top-nav-component" role="menu">
-                <li class="top-nav-item">
-                  <router-link to="/">Product List</router-link>
-                  <router-link to="/about">About</router-link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-        </div>
-    </div> -->
-    <main>
+    <main class="layout__main">
       <slot/>
     </main>
+    
     <footer class="layout__footer">
       &copy; Awesome Company
     </footer>

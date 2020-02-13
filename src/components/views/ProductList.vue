@@ -1,8 +1,15 @@
 <template>
-  <layout name="LayoutDefault" class="layout__main">
-    <div >
+  <layout name="LayoutDefault">
+    <div class="layout-main">
       <aside class="layout-main__sidebar">
-        <strong>Navigation</strong>
+        <div class="filter-title">Size</div>
+        <div class="filter-area">
+          <button class="btn">XS</button>
+          <button class="btn">XS</button>
+          <button class="btn">XS</button>
+          <button class="btn">XS</button>
+          <button class="btn">XS</button>
+        </div>
       </aside>
       <div class="layout-main__content">
         <h1>123</h1>
