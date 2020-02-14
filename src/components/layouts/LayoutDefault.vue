@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import LayoutHeader from './LayoutHeader';
+import LayoutHeader from './_LayoutHeader';
 
 export default {
   name: `LayoutDefault`,
