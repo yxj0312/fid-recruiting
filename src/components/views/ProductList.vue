@@ -1,14 +1,29 @@
 <template>
   <layout name="LayoutDefault">
     <div class="layout-main">
-      <aside class="layout-main__sidebar">
-        <div class="filter-title">Size</div>
-        <div class="filter-area">
-          <button class="btn">XS</button>
-          <button class="btn">XS</button>
-          <button class="btn">XS</button>
-          <button class="btn">XS</button>
-          <button class="btn">XS</button>
+      <aside class="layout-main__sidebar filter">
+        <div class="filter__title">Size</div>
+        <div class="filter__area">
+          <div class="grid grid--gutters grid--1of4">
+            <div class="grid-cell">
+              <button class="btn">XS</button>
+            </div>
+            <div class="grid-cell">
+              <button class="btn">S</button>
+            </div>
+            <div class="grid-cell">
+              <button class="btn">M</button>
+            </div>
+            <div class="grid-cell">
+              <button class="btn">L</button>
+            </div>
+            <div class="grid-cell">
+              <button class="btn">XL</button>
+            </div>
+            <div class="grid-cell">
+              <button class="btn">XXL</button>
+            </div>
+          </div>
         </div>
       </aside>
       <div class="layout-main__content">

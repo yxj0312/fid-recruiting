@@ -1,0 +1,10 @@
+.filter {
+    &__title {
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+
+    &__area {
+        display: flex;
+    }
+}
