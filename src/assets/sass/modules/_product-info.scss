@@ -1,0 +1,31 @@
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__sale-price {
+        &:before {
+            content: "€";
+        }
+        color: $red-100;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+    }
+
+    &__regular-price {
+        &:before {
+            content: "€";
+        }
+        color: $neutral-400;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+    }
+
+    &__brand {
+        color: $neutral-400;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+    }
+}
