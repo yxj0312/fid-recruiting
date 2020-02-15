@@ -27,61 +27,8 @@
         </div>
       </aside>
       <div class="layout-main__content">
-        <div class="grid grid--gutters grid--1of4">
-            <div class="grid-cell grid-cell--border">
-              <div class="product-card">
-                <div class="product-image">
-                  <a :href="products[0].url">
-                    <img :src="products[0].images[0]" alt="">
-                  </a>
-                </div>
-                <div class="product-info">
-                  <div class="product-info__sale-price" v-show="products[0].priceR">{{products[0].priceR}}</div>
-                  <div :class="products[0].priceR ? 'product-info__price-strike-through': 'product-info__regular-price'">{{products[0].priceO}}</div>
-                  <div class="product-info__brand">{{products[0].brand}}</div>
-                  <div class="product-info__descriptions">{{products[0].description}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-cell grid-cell--border">
-              <div class="product-card">
-                <div class="product-image">
-                  <img :src="products[0].images[1]" alt="">
-                </div>
-                <div class="product-info">
-                  <div class="product-info__sale-price">{{products[0].priceO}}</div>
-                  <div class="product-info__regular-price">{{products[0].priceR}}</div>
-                  <div class="product-info__brand">{{products[0].brand}}</div>
-                  <div class="product-info__descriptions">{{products[0].description}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-cell grid-cell--border">
-              <div class="product-card">
-                <div class="product-image">
-                  <img :src="products[0].images[0]" alt="">
-                </div>
-                <div class="product-info">
-                  <div class="product-info__sale-price">{{products[0].priceO}}</div>
-                  <div class="product-info__regular-price">{{products[0].priceR}}</div>
-                  <div class="product-info__brand">{{products[0].brand}}</div>
-                  <div class="product-info__descriptions">{{products[0].description}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-cell grid-cell--border">
-              <div class="product-card">
-                <div class="product-image">
-                  <img :src="products[0].images[0]" alt="">
-                </div>
-                <div class="product-info">
-                  <div class="product-info__sale-price">{{products[0].priceO}}</div>
-                  <div class="product-info__regular-price">{{products[0].priceR}}</div>
-                  <div class="product-info__brand">{{products[0].brand}}</div>
-                  <div class="product-info__descriptions">{{products[0].description}}</div>
-                </div>
-              </div>
-            </div>
+        <div class="grid grid--gutters grid--1of4" >
+          <product-card :product="product" v-for="(product, index) in products" :key="index"></product-card> 
         </div>
       </div>
     </div>
@@ -91,11 +38,13 @@
 <script>
 import axios from 'axios';
 import Layout from '../layouts/Layout';
+import ProductCard from './_ProductCard';
 
 export default {
   name: `Home`,
   components: {
-    Layout,
+    Layout, 
+    ProductCard
   },
   data() {
     return {
@@ -113,6 +62,9 @@ export default {
     .then(({data}) => {
       this.products = data;
     })
+  },
+
+  methods: {
   },
 };
 </script>
