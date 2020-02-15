@@ -36,8 +36,8 @@
                   </a>
                 </div>
                 <div class="product-info">
-                  <div class="product-info__sale-price">{{products[0].priceR}}</div>
-                  <div class="product-info__regular-price">{{products[0].priceO}}</div>
+                  <div class="product-info__sale-price" v-show="products[0].priceR">{{products[0].priceR}}</div>
+                  <div :class="products[0].priceR ? 'product-info__price-strike-through': 'product-info__regular-price'">{{products[0].priceO}}</div>
                   <div class="product-info__brand">{{products[0].brand}}</div>
                   <div class="product-info__descriptions">{{products[0].description}}</div>
                 </div>
