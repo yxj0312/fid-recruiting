@@ -3,7 +3,9 @@
         <div class="product-card">
         <div class="product-image">
             <a :href="product.url">
-            <img :src="product.images[0]"
+            <img :src="image"
+                @mouseover="changeImage"
+                @mouseout="changeImage"
                 alt="">
             </a>
         </div>
@@ -25,7 +27,7 @@
 
         data() {
             return {
-                
+                image: this.product.images[0]
             }
         },
 
@@ -34,7 +36,9 @@
         },
 
         methods: {
-            
+            changeImage() {
+                this.image = (this.image == this.product.images[0]) ? this.product.images[1] : this.product.images[0]
+            }
         }
     }
 </script>
