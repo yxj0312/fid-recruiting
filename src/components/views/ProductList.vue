@@ -70,8 +70,6 @@ export default {
       this.products = data;
       this.originalProducts = data;
     })
-
-    this.$on('filter-size', size => { console.log(size)});
   },
 
   methods: {

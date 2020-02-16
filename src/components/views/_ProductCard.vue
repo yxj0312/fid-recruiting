@@ -3,10 +3,18 @@
         <div class="product-card">
         <div class="product-image">
             <a :href="product.url">
-            <img :src="image"
-                @mouseover="changeImage"
-                @mouseout="changeImage"
-                alt="">
+                <img
+                    :src="image"
+                    v-if="hover"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
+                <img
+                    :src="image2"
+                    v-if="!hover"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
             </a>
         </div>
         <div class="product-info">
@@ -27,18 +35,25 @@
 
         data() {
             return {
-                image: this.product.images[0]
+                hover: true
             }
         },
 
         computed: {
-            
+            image() {
+                return this.product.images[0]
+            },
+            image2() {
+                return this.product.images[1]
+            }
         },
+
 
         methods: {
             changeImage() {
-                this.image = (this.image == this.product.images[0]) ? this.product.images[1] : this.product.images[0]
-            }
-        }
+                this.hover = !this.hover;
+            },
+        },
+
     }
 </script>
