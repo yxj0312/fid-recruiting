@@ -10,8 +10,8 @@
                 <button class="btn" @click="reset">Reset</button>
             </div>
           </div>
+          <a @click.prevent="toggleSize">{{this.show ? 'Show less sizes' : 'Show more sizes'}}</a>
         </div>
-        <button @click.prevent="toggleSize">Show all sizes</button>
       </aside>
       <div class="layout-main__content">
         <div class="grid grid--gutters grid--1of4" >

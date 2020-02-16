@@ -6,5 +6,16 @@
 
     &__area {
         display: flex;
+        flex-direction: column;
+        
+        a {
+            margin-top: 1em;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: black;
+            }
+        }
     }
 }
