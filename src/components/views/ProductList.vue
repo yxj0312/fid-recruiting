@@ -6,15 +6,9 @@
         <div class="filter__area">
           <div class="grid grid--gutters grid--1of4">
             <product-size-filter :size="size" @filter="sizeFilter" v-for="(size, index) in sizeCollection" :key="index"></product-size-filter>
-            <!-- <product-size-filter size="XS" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="S" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="M" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="L" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="XL" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="XXL" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="XXXL" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="4XL" @filter="sizeFilter"></product-size-filter>
-            <product-size-filter size="5XL" @filter="sizeFilter"></product-size-filter> -->
+            <div class="grid-cell" v-if="this.products !== this.originalProducts">
+                <button class="btn" @click="reset">Reset</button>
+            </div>
           </div>
         </div>
       </aside>
@@ -77,6 +71,10 @@ export default {
       this.products = this.originalProducts;
       this.products = this.products.filter(product => product.sizes.includes(size));
     },
+
+    reset() {
+      this.products = this.originalProducts;
+    }
   },
 };
 </script>
