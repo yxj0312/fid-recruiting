@@ -14,7 +14,16 @@
         </div>
       </aside>
       <div class="layout-main__content">
-        <div class="grid grid--gutters grid--1of4" >
+        <select v-model="selected">
+          <option value="grid--1of8">8</option>
+          <option value="grid--1of7">7</option>
+          <option value="grid--1of6">6</option>
+          <option value="grid--1of5">5</option>
+          <option value="grid--1of4">4</option>
+          <option value="grid--1of3">3</option>
+          <option value="grid--1of2">2</option>
+        </select>
+        <div class="grid grid--gutters" :class="selected" >
           <product-card :product="product" v-for="(product, index) in products" :key="index"></product-card> 
         </div>
       </div>
@@ -42,7 +51,8 @@ export default {
       message:'',
       romaSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
       filterSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
-      show: false
+      show: false,
+      selected: 'grid--1of4'
     }
   },
   computed: {
