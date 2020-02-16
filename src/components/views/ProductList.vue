@@ -5,12 +5,13 @@
         <div class="filter__title">Size</div>
         <div class="filter__area">
           <div class="grid grid--gutters grid--1of4">
-            <product-size-filter :size="size" @filter="sizeFilter" v-for="(size, index) in sizeCollection" :key="index"></product-size-filter>
+            <product-size-filter :size="size" @filter="sizeFilter" v-for="(size, index) in filterSize" :key="index"></product-size-filter>
             <div class="grid-cell" v-if="this.products !== this.originalProducts">
                 <button class="btn" @click="reset">Reset</button>
             </div>
           </div>
         </div>
+        <button @click.prevent="toggleSize">Show all sizes</button>
       </aside>
       <div class="layout-main__content">
         <div class="grid grid--gutters grid--1of4" >
@@ -38,7 +39,10 @@ export default {
     return {
       products: [],
       originalProducts:[],
-      message:''
+      message:'',
+      romaSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
+      filterSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
+      show: false
     }
   },
   computed: {
@@ -74,6 +78,15 @@ export default {
 
     reset() {
       this.products = this.originalProducts;
+    },
+
+    toggleSize() {
+      this.show = !this.show;
+      if (this.show) {
+        this.filterSize = this.sizeCollection
+      } else {
+        this.filterSize = this.romaSize
+      }
     }
   },
 };
