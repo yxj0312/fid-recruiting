@@ -23,6 +23,10 @@
           <option value="grid--1of3">3</option>
           <option value="grid--1of2">2</option>
         </select>
+    
+        <select @change="sortedProducts(order)" v-model="order">
+          <option v-for="(item,index) in sortOptions" :value="item.value" :key="index">{{item.text}}</option>
+        </select>
         <div class="grid grid--gutters" :class="selected" >
           <product-card :product="product" v-for="(product, index) in products" :key="index"></product-card> 
         </div>
@@ -52,7 +56,13 @@ export default {
       romaSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
       filterSize: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', '4XL', '5XL'],
       show: false,
-      selected: 'grid--1of4'
+      selected: 'grid--1of4',
+      order:'',
+      sortOptions: [
+        { text: 'select', value: ''},
+        { text: 'up', value:'1'},
+        { text: 'down', value:'-1'}
+      ]
     }
   },
   computed: {
@@ -64,7 +74,7 @@ export default {
         });
       });
       return Array.from(sizeCollection).sort()
-    }
+    },
   },
   mounted() {
     axios.get(
@@ -97,6 +107,14 @@ export default {
       } else {
         this.filterSize = this.romaSize
       }
+    },
+
+    sortedProducts() {
+
+      let test = this.products;
+      test.sort((a, b) => this.order * ((b.priceR ? b.priceR : b.priceO) - (a.priceR ? a.priceR : a.priceO)));
+
+      this.products = test;
     }
   },
 };
