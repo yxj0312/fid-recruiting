@@ -16,13 +16,9 @@
       <div class="layout-main__content">
         <div class="top-area">
           <select v-model="selected" class="dropdown">
-            <option value="grid--1of8">8 items per row</option>
-            <option value="grid--1of7">7 items per row</option>
-            <option value="grid--1of6">6 items per row</option>
-            <option value="grid--1of5">5 items per row</option>
-            <option value="grid--1of4">4 items per row</option>
-            <option value="grid--1of3">3 items per row</option>
-            <option value="grid--1of2">2 items per row</option>
+            <option v-for="(item, index) in itemPerRows" :key="index" :value="'grid--1of' + item.value">
+              {{ item.value + ' items per row' }}
+            </option>
           </select>
       
           <select @change="sortedProducts(order)" v-model="order" class="dropdown">
@@ -61,6 +57,9 @@ export default {
       show: false,
       selected: 'grid--1of4',
       order:'',
+      itemPerRows: [
+        {value:8},{value:7},{value:6},{value:5},{value:4},{value:3},{value:2}
+      ],
       sortOptions: [
         { text: 'sort price', value: '', disable: true},
         { text: 'highest price', value:'1', disable: false},
