@@ -14,19 +14,22 @@
         </div>
       </aside>
       <div class="layout-main__content">
-        <select v-model="selected">
-          <option value="grid--1of8">8</option>
-          <option value="grid--1of7">7</option>
-          <option value="grid--1of6">6</option>
-          <option value="grid--1of5">5</option>
-          <option value="grid--1of4">4</option>
-          <option value="grid--1of3">3</option>
-          <option value="grid--1of2">2</option>
-        </select>
-    
-        <select @change="sortedProducts(order)" v-model="order">
-          <option v-for="(item,index) in sortOptions" :value="item.value" :key="index">{{item.text}}</option>
-        </select>
+        <div class="top-area">
+          <select v-model="selected" class="dropdown">
+            <option value="grid--1of8">8</option>
+            <option value="grid--1of7">7</option>
+            <option value="grid--1of6">6</option>
+            <option value="grid--1of5">5</option>
+            <option value="grid--1of4">4</option>
+            <option value="grid--1of3">3</option>
+            <option value="grid--1of2">2</option>
+          </select>
+      
+          <select @change="sortedProducts(order)" v-model="order" class="dropdown">
+            <option v-for="(item,index) in sortOptions" :value="item.value" :key="index">{{item.text}}</option>
+          </select>
+        </div>
+
         <div class="grid grid--gutters" :class="selected" >
           <product-card :product="product" v-for="(product, index) in products" :key="index"></product-card> 
         </div>
