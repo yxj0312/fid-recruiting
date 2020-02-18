@@ -16,17 +16,17 @@
       <div class="layout-main__content">
         <div class="top-area">
           <select v-model="selected" class="dropdown">
-            <option value="grid--1of8">8</option>
-            <option value="grid--1of7">7</option>
-            <option value="grid--1of6">6</option>
-            <option value="grid--1of5">5</option>
-            <option value="grid--1of4">4</option>
-            <option value="grid--1of3">3</option>
-            <option value="grid--1of2">2</option>
+            <option value="grid--1of8">8 items per row</option>
+            <option value="grid--1of7">7 items per row</option>
+            <option value="grid--1of6">6 items per row</option>
+            <option value="grid--1of5">5 items per row</option>
+            <option value="grid--1of4">4 items per row</option>
+            <option value="grid--1of3">3 items per row</option>
+            <option value="grid--1of2">2 items per row</option>
           </select>
       
           <select @change="sortedProducts(order)" v-model="order" class="dropdown">
-            <option v-for="(item,index) in sortOptions" :value="item.value" :key="index">{{item.text}}</option>
+            <option v-for="(item,index) in sortOptions" :value="item.value" :key="index" :disabled="item.disable">{{item.text}}</option>
           </select>
         </div>
 
@@ -62,9 +62,9 @@ export default {
       selected: 'grid--1of4',
       order:'',
       sortOptions: [
-        { text: 'select', value: ''},
-        { text: 'up', value:'1'},
-        { text: 'down', value:'-1'}
+        { text: 'sort price', value: '', disable: true},
+        { text: 'highest price', value:'1', disable: false},
+        { text: 'lowest price', value:'-1', disable: false}
       ]
     }
   },
