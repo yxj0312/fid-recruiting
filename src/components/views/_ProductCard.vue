@@ -2,7 +2,7 @@
     <div class="grid-cell grid-cell--border">
         <div class="product-card">
         <div class="product-image">
-            <a :href="product.url">
+            <a :href="product.url" target="_blank">
                 <img
                     :src="image"
                     v-if="hover"
