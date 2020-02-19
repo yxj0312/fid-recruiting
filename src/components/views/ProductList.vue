@@ -26,7 +26,7 @@
           </select>
         </div>
 
-        <div class="grid grid--gutters" :class="selected" >
+        <div class="grid grid--card" :class="selected" >
           <product-card :product="product" v-for="(product, index) in products" :key="index"></product-card> 
         </div>
       </div>

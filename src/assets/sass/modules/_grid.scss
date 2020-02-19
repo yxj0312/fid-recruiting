@@ -1,12 +1,22 @@
 .grid {
-    display: flex;
     flex-wrap: wrap;
 
-    &--gutters {
+    &--gutters,
+    &--card {
         margin: -.5em 0 0 -.5em;
 
         > .grid-cell {
             padding: .5em 0 0 .5em;
+        }
+    }
+
+    &--gutters {
+        display: flex;
+    }
+
+    &--card {
+        @media screen and (min-width: $break-md) {
+            display: flex;
         }
     }
 
