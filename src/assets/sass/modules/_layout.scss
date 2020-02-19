@@ -25,7 +25,7 @@
         justify-content: flex-end;
     }
 
-    @media screen and (min-width: $break-lg) {
+    @media screen and (min-width: $break-md) {
         &__main {
             flex-direction: row;
         }
