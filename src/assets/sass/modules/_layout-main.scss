@@ -1,18 +1,6 @@
 .layout-main {
-    display: flex;
-    &__content {
-        padding: 1em;
-    }
-
-    &__sidebar {
-        flex: 0 0 20%;
-        padding: 1em;
-        border-radius: 3px;
-        background: rgba(147, 128, 108, 0.1);
-        height: 100%;
-    }
-
-    @media (min-width: $break-lg) {
+    @media (min-width: $break-md) {
+        display: flex;
         &__content {
             flex: 1;
             padding: 1em;
@@ -21,6 +9,14 @@
 
         &__nav {
            flex: 0 0 12em;
+        }
+
+        &__sidebar {
+            flex: 0 0 20%;
+            padding: 1em;
+            border-radius: 3px;
+            background: rgba(147, 128, 108, 0.1);
+            height: 100%;
         }
     }
 }
