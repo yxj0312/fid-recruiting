@@ -15,7 +15,7 @@
     }
 
     &--card {
-        @media screen and (min-width: $break-md) {
+        @media screen and (min-width: $break-sm) {
             display: flex;
         }
     }

@@ -1,5 +1,5 @@
 .layout-main {
-    @media (min-width: $break-md) {
+    @media (min-width: $break-sm) {
         display: flex;
         &__content {
             flex: 1;
@@ -11,8 +11,11 @@
             flex: 0 0 20%;
             padding: 1em;
             border-radius: 3px;
-            background: rgba(147, 128, 108, 0.1);
             height: 100%;
         }
     }
+    
+    &__sidebar {
+        background: rgba(147, 128, 108, 0.1);
+    } 
 }
