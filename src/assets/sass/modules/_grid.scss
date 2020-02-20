@@ -1,12 +1,14 @@
 .grid {
     flex-wrap: wrap;
 
-    &--gutters,
-    &--card {
-        margin: -.5em 0 0 -.5em;
+    @media (min-width: $break-sm) {
+        &--gutters,
+        &--card {
+            margin: -.5em 0 0 -.5em;
 
-        > .grid-cell {
-            padding: .5em 0 0 .5em;
+            > .grid-cell {
+                padding: .5em 0 0 .5em;
+            }
         }
     }
 
