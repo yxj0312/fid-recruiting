@@ -1,16 +1,16 @@
 .grid {
     flex-wrap: wrap;
 
-    @media (min-width: $break-sm) {
-        &--gutters,
-        &--card {
-            margin: -.5em 0 0 -.5em;
+    
+    &--gutters,
+    &--card {
+        margin: -.5em 0 0 -.5em;
 
-            > .grid-cell {
-                padding: .5em 0 0 .5em;
-            }
+        > .grid-cell {
+            padding: .5em 0 0 .5em;
         }
     }
+    
 
     &--gutters {
         display: flex;
