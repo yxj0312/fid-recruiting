@@ -6,12 +6,14 @@
                 <img
                     :src="image"
                     v-if="hover"
+                    v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
                     :alt="product.description">
                 <img
                     :src="image2"
                     v-if="!hover"
+                    v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
                     :alt="product.description">
