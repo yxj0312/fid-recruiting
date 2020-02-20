@@ -1,7 +1,18 @@
 .dropdown {
-    padding: .5em 1.5em;
-    margin: 1em;
     border: 2px solid black;
     border-radius: 2px;
     text-transform: capitalize;
+    padding: .5em 1.5em;
+    margin-top: 1em;
+    @media screen and (max-width: $break-sm) {
+        width: 100%;
+        &--item-per-rows {
+            display:none;
+        }
+    }
+    
+    
+    @media screen and (min-width: $break-sm) {
+        margin: 1em;
+    }
 }

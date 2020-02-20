@@ -15,7 +15,7 @@
       </aside>
       <div class="layout-main__content">
         <div class="top-area">
-          <select v-model="selected" class="dropdown">
+          <select v-model="selected" class="dropdown dropdown--item-per-rows">
             <option v-for="(item, index) in itemPerRows" :key="index" :value="'grid--1of' + item.value">
               {{ item.value + ' items per row' }}
             </option>
