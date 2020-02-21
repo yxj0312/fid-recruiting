@@ -41,7 +41,7 @@ import ProductCard from './_ProductCard';
 import ProductSizeFilter from './_ProductSizeFilter';
 
 export default {
-  name: `Home`,
+  name: `ProductList`,
   components: {
     Layout, 
     ProductCard,

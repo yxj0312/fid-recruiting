@@ -1,5 +1,5 @@
 import ProductList from './components/views/ProductList'
-import About from './components/About'
+import Statistic from './components/views/Statistic'
 
 export default {
     mode: 'history',
@@ -16,8 +16,8 @@ export default {
         },
 
         {
-            path: '/about',
-            component: About
+            path: '/statistics',
+            component: Statistic
         },
     ]
 }

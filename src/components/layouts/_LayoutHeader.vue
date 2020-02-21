@@ -6,7 +6,7 @@
         <nav class="header-nav">
             <ul>
                 <li><router-link to="/">Product List</router-link></li>
-                <li><router-link to="/about">About</router-link></li>
+                <li><router-link to="/statistics">Statistic</router-link></li>
             </ul>
         </nav>
     </header>
