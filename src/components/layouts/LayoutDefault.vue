@@ -20,19 +20,11 @@ export default {
 
   data() {
     return {
-      user: null,
     };
   },
 
   components: {
     LayoutHeader
-  },
-
-  created() {
-    // Simulate fetching user data.
-    setTimeout(() => {
-      this.user = { name: `John Doe` };
-    }, 2000);
   },
 };
 </script>
