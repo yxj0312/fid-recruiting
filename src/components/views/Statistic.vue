@@ -63,6 +63,22 @@ import Layout from '../layouts/Layout';
 
             getDistinctBrand() {
                 return [...new Set(this.countedSizeSelection.map(product => product.brand))];
+            },
+
+            lowestAvgPrice() {
+                return this.products.filter(product => {
+                    return product.sizes.includes('32')
+                }).map(product=>({
+                    brand:product.brand, price: this.getPrice(product)
+                }))
+            },
+
+            hello() {
+                return this.groupBy(this.lowestAvgPrice, 'brand')
+            },
+
+            bye() {
+                return Object.values(this.hello).reverse()
             }
         },
 
@@ -77,7 +93,22 @@ import Layout from '../layouts/Layout';
 
             getMaxLength(arr) {
                 return arr.reduce((p, c) => p.length > c.length ? p : c).length;
-            }
-        }
+            },
+
+            groupBy(objectArray, property) {
+                return objectArray.reduce(function (acc, obj) {
+                    let key = obj[property]
+                    if (!acc[key]) {
+                    acc[key] = []
+                    }
+                    acc[key].push(obj)
+                    return acc
+                }, {})
+            },
+
+            average(nums) {
+                return nums.reduce((a, b) => (a + b)) / nums.length;
+            },
+        },
     }
 </script>
