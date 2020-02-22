@@ -78,7 +78,15 @@ import Layout from '../layouts/Layout';
             },
 
             bye() {
-                return Object.values(this.hello).reverse()
+                var object = {}
+                Object.keys(this.hello).forEach((key,index) => {
+                    object[index] = {brand: key, avg:this.average(this.hello[key])}
+                    console.log(index);
+                    console.log(object[index])
+                })
+                console.log(object);
+                let arr = Object.values(object)
+                return this.getMin(arr);
             }
         },
 
@@ -95,6 +103,10 @@ import Layout from '../layouts/Layout';
                 return arr.reduce((p, c) => p.length > c.length ? p : c).length;
             },
 
+            getMin(arr) {
+                return arr.reduce((p, c) => p.avg < c.avg ? p : c);
+            },
+
             groupBy(objectArray, property) {
                 return objectArray.reduce(function (acc, obj) {
                     let key = obj[property]
@@ -107,7 +119,7 @@ import Layout from '../layouts/Layout';
             },
 
             average(nums) {
-                return nums.reduce((a, b) => (a + b)) / nums.length;
+                return nums.reduce((a,b)=>a + b.price, 0) / nums.length               
             },
         },
     }
