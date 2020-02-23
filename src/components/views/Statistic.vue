@@ -1,7 +1,7 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <bar-chart :data=""></bar-chart>
+            <column-chart :data="countedBrand" :legend="false" :colors="['#b00', '#666']"  title="Time" ytitle="Count"></column-chart>
         </div>
     </layout>
 </template>
@@ -13,8 +13,7 @@ import Layout from '../layouts/Layout';
     export default {
         name: 'Statitic',        
         components: {
-            Layout, 
-
+            Layout
         },
 
         data() {
@@ -43,7 +42,7 @@ import Layout from '../layouts/Layout';
             },
 
             countedBrand() {
-                return [...this.totallNum(this.priceLessThanFourty)]
+                return [...this.totallNum(this.priceLessThanFourty)].map(([key, val]) => ({data:{[key]: val}}))
             },
 
             sizeSelectionCount() {
