@@ -20,7 +20,6 @@ import Layout from '../layouts/Layout';
         data() {
             return {      
                 products: [],
-                originalProducts:[],
             }
         },
 
@@ -30,11 +29,9 @@ import Layout from '../layouts/Layout';
             )
             .catch(() => {
                 this.products = [];
-                this.originalProducts = [];
             })
             .then(({data}) => {
                 this.products = data;
-                this.originalProducts = data;
             })
         },
 
