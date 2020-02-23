@@ -1,59 +1,7 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <!-- <fusioncharts
-                :type="type"
-     
-                :dataFormat="dataFormat"
-                :dataSource="dataSource"
-                >
-            </fusioncharts> -->
-
-            <!-- <bars
-            :data="barData"
-            :gradient="['#ffbe88', '#ff93df']"
-            :barWidth="5"
-            :growDuration="1"
-            padding="18" 
-            :width="200"
-            :height="200" >
-
-            </bars> -->
-
-            <v-chart :options="{
-                title: {
-                    text: '极坐标双数值轴'
-                },
-                legend: {
-                    data: ['line']
-                },
-                polar: {
-                    center: ['50%', '54%']
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                angleAxis: {
-                    type: 'value',
-                    startAngle: 0
-                },
-                radiusAxis: {
-                    min: 0
-                },
-                series: [
-                    {
-                        coordinateSystem: 'polar',
-                        name: 'line',
-                        type: 'line',
-                        showSymbol: false,
-                        data: echartData
-                    }
-                ],
-                animationDuration: 2000
-            }"/>
+            <bar-chart :data="[['Work', 1322], ['Play', 1492]]"></bar-chart>
         </div>
     </layout>
 </template>
@@ -63,64 +11,16 @@ import axios from 'axios';
 import Layout from '../layouts/Layout';
 
     export default {
-        name: 'Statitic',
-        props: [],
-
+        name: 'Statitic',        
         components: {
             Layout, 
 
         },
 
-        
-        
         data() {
-
-            
-    
             return {      
                 products: [],
                 originalProducts:[],
-                type:'bar2d',
-                // width:'50%',
-                // height:'100%',
-                dataFormat:'json',
-
-                
-
-                // polar: {
-                //     title: {
-                //     text: '极坐标双数值轴'
-                //     },
-                //     legend: {
-                //     data: ['line']
-                //     },
-                //     polar: {
-                //     center: ['50%', '54%']
-                //     },
-                //     tooltip: {
-                //     trigger: 'axis',
-                //     axisPointer: {
-                //         type: 'cross'
-                //     }
-                //     },
-                //     angleAxis: {
-                //     type: 'value',
-                //     startAngle: 0
-                //     },
-                //     radiusAxis: {
-                //     min: 0
-                //     },
-                //     series: [
-                //     {
-                //         coordinateSystem: 'polar',
-                //         name: 'line',
-                //         type: 'line',
-                //         showSymbol: false,
-                //         data: data
-                //     }
-                //     ],
-                //     animationDuration: 2000
-                // }                
             }
         },
 
@@ -139,17 +39,6 @@ import Layout from '../layouts/Layout';
         },
 
         computed: {
-            echartData() {
-                let echart = []
-
-                for (let i = 0; i <= 360; i++) {
-                    let t = i / 180 * Math.PI
-                    let r = Math.sin(2 * t) * Math.cos(2 * t)
-                    echart.push([r, i])
-                }
-                return echart;
-            },
-
             priceLessThanFourty() {
                 return this.products.filter(product => {
                     return this.getPrice(product) < 40
@@ -199,24 +88,6 @@ import Layout from '../layouts/Layout';
                 let arr = Object.values(object)
                 return this.getMin(arr);
             },
-
-            dataSource() {
-                return   {chart: {
-                        caption: 'Recommended Portfolio Split',
-                        subCaption: 'For a net-worth of $1M',
-                        showValues: '1',
-                        showPercentInTooltip: '0',
-                        // numberPrefix: '$',
-                        enableMultiSlicing: '1',
-                        theme: 'Candy'
-                    },
-                    data: this.countedBrand.map(product => ({label:product[0], value: product[1]}))
-            }},
-
-            barData() {
-                return this.countedBrand.map(product => ({value: product[1], title:product[0]}))
-            }
-
         },
 
         methods: {

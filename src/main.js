@@ -10,12 +10,15 @@ import Bars from 'vuebars';
 import ECharts from 'vue-echarts';
 import 'echarts/lib/chart/bar';
 import 'echarts/lib/component/tooltip';
+import Chartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
 
 Vue.use(VueRouter);
 Vue.use(Vue2TouchEvents);
 Vue.use(VueFusionCharts, FusionCharts, Charts);
 Vue.use(Bars)
+Vue.use(Chartkick.use(Chart))
 Vue.config.productionTip = false
 
 Vue.component('v-chart', ECharts)
