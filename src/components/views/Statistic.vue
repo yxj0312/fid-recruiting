@@ -1,7 +1,7 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <bar-chart :data="[['Work', 1322], ['Play', 1492]]"></bar-chart>
+            <bar-chart :data=""></bar-chart>
         </div>
     </layout>
 </template>
@@ -81,10 +81,7 @@ import Layout from '../layouts/Layout';
                 var object = {}
                 Object.keys(this.hello).forEach((key,index) => {
                     object[index] = {brand: key, avg:this.average(this.hello[key])}
-                    console.log(index);
-                    console.log(object[index])
                 })
-                console.log(object);
                 let arr = Object.values(object)
                 return this.getMin(arr);
             },
