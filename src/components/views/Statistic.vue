@@ -1,7 +1,19 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <column-chart :data="countedBrand" :legend="false" :colors="['#b00', '#666']"  title="Time" ytitle="Count"></column-chart>
+            <column-chart 
+                :data="countedBrand" 
+                :legend="false" 
+                :colors="this.getRandomColor(this.countedBrand.length)"  
+                title="which brand has the most products that cost less than 40 EUR"
+                xtitle="All Brand have the products that cost less than 40 EUR"
+                ytitle="Count"
+                width="50em"
+                heigth="50em"
+                :stacked="true"
+                :discrete="true"
+                :messages="{empty: 'No data'}"
+            />
         </div>
     </layout>
 </template>
@@ -81,6 +93,10 @@ import Layout from '../layouts/Layout';
                 let arr = Object.values(object)
                 return this.getMin(arr);
             },
+
+            color() {
+                return this.getRandomColor(this.countedBrand.length)
+            }
         },
 
         methods: {
@@ -114,6 +130,14 @@ import Layout from '../layouts/Layout';
             average(nums) {
                 return nums.reduce((a,b)=>a + b.price, 0) / nums.length               
             },
+
+            getRandomColor(length) {
+                var array= [];
+                for (let i = 0; i < length; i++) {
+                    array.push('#' + Math.floor(Math.random()*16777215).toString(16))
+                }
+                return array;
+            }
         },
     }
 </script>
