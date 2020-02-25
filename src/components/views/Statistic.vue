@@ -1,7 +1,7 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <statistic-card></statistic-card>
+            <statistic-card :productImage="getAllReviewProducts[1].images[1]"></statistic-card>
             <!-- <div>
                 <h2>
                     Which brand has the most products that cost less than 40 EUR
@@ -69,6 +69,14 @@ import StatisticCard from './_StatisticCard'
 
             countedBrand() {
                 return [...this.totallNum(this.priceLessThanFourty)].map(([key, val]) => ({data:{[key]: val}}))
+            },
+
+            getAllReviewProducts() {
+                return this.products.filter(product => {
+                    return this.getPrice(product) < 40
+                }).filter(product => {
+                    return product.brand == "REVIEW"
+                })
             },
 
             sizeSelectionCount() {
