@@ -1,7 +1,19 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <column-chart 
+            <statistic-card></statistic-card>
+            <!-- <div>
+                <h2>
+                    Which brand has the most products that cost less than 40 EUR
+                </h2>
+                <div style="background: yellow;position: relative;">
+                    <h2 style="color: red; font-size: 60px;font-weight: 400;text-transform: uppercase;letter-spacing: 0.1px;"
+                    
+                    >RIVIEW</h2>
+                    <img :src="products[0].images[1]" alt="">
+                </div>  
+            </div> -->
+            <!-- <column-chart 
                 :data="countedBrand" 
                 :legend="false" 
                 :colors="this.getRandomColor(this.countedBrand.length)"  
@@ -13,7 +25,7 @@
                 :stacked="true"
                 :discrete="true"
                 :messages="{empty: 'No data'}"
-            />
+            /> -->
         </div>
     </layout>
 </template>
@@ -21,11 +33,13 @@
 <script>
 import axios from 'axios';
 import Layout from '../layouts/Layout';
+import StatisticCard from './_StatisticCard'
 
     export default {
         name: 'Statitic',        
         components: {
-            Layout
+            Layout,
+            StatisticCard
         },
 
         data() {
