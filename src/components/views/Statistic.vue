@@ -1,7 +1,7 @@
 <template>
     <layout name="LayoutDefault">
         <div class="layout-main">
-            <statistic-card :productImage="getAllReviewProducts[1].images[1]"></statistic-card>
+            <statistic-card :products="getAllReviewProducts"></statistic-card>
             <!-- <div>
                 <h2>
                     Which brand has the most products that cost less than 40 EUR

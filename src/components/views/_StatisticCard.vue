@@ -4,12 +4,17 @@
               <div class="Aboutus-banner col-lg-6 col-md-12">
                 <div class="image-container">
                   <a class="ishi-customhover-fadeinnormal product-banner" href="/" v-show="show">
-                    <img 
-                        :src="productImage"
-                        data-src="" 
-                        data-sizes="auto" 
-                        alt=""
-                    >
+                    <div class="grid grid--gutters grid--1of5">
+                        <div class="grid-cell" v-for="(item, index) in products" :key="index">        
+                            <img 
+                                :src="item.images[1]"
+                                data-src="" 
+                                data-sizes="auto" 
+                                alt=""
+                                style="height:10em"
+                            >
+                        </div>
+                    </div>
                         <!-- src="//cdn.shopify.com/s/files/1/0271/0536/1973/files/About-Us-Banner-1.png?v=1569048319"  -->
                   </a>
                 </div>
@@ -18,7 +23,7 @@
             <div class="information-container col-lg-6 col-md-12">
               <div class="title-container">
                 
-                  <h3 class="heading">We Have Everything You Need ?</h3>
+                  <h3 class="heading">Which brand has the most products that cost less than 40 EUR?</h3>
                 
               </div>
               <div class="list-Aboutus-info">
@@ -43,7 +48,7 @@
 <script>
     export default {
         props: [
-            'productImage'
+            'products'
         ],
 
         components: {},
