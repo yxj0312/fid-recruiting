@@ -15,16 +15,17 @@
                 <div class="card-info-container__heading">
                     Which brand has the most products that cost less than 40 EUR?
                 </div>
+
                 <div class="card-info-container__infos">
                     <!-- REVIEW -->
                     <img src="http://review-fashion.com/sites/review-fashion.com/themes/review/logo.png" alt="">
                 </div>
 
-                <div class="about-btn">
-                    <a class="btn" @click="shown">
+                <div class="card-info-container__button">
+                    <a class="btn btn--statistic" @click="shown">
                         Show All
                     </a>
-            </div>
+                </div>
             </div>
         </div>
         <!-- <div class="Aboutus-banner col-lg-6 col-md-12">

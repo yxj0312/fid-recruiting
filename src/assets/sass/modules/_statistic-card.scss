@@ -19,53 +19,9 @@
         background: pink;
         padding: 5em;
     }
+    
     a {
         display: inline-block;
         position: relative;
     }
-}
-
-.heading {
-    line-height: 34px;
-    margin: 0;
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: 0;
-}
-
-
-.about-btn {
-    margin-top: 20px;
-}
-
-
-.col-lg-6 {
-    width: 50%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px
-}
-
-.col-md-12 {
-    width: 100%;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px
-}
-
-
-
-
-.information-container .about-btn a {
-    padding: 10px 18px;
-    position: relative;
-    font-weight: 500;
-}
-
-
-.list-Aboutus-info {
-    margin-bottom: 50px;
 }
