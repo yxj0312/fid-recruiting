@@ -1,31 +1,8 @@
 <template>
     <layout name="LayoutDefault">
-        <div class="layout-main">
+        <div class="layout-main layout-main--statistic">
             <statistic-card :products="getAllReviewProducts"></statistic-card>
-            <!-- <div>
-                <h2>
-                    Which brand has the most products that cost less than 40 EUR
-                </h2>
-                <div style="background: yellow;position: relative;">
-                    <h2 style="color: red; font-size: 60px;font-weight: 400;text-transform: uppercase;letter-spacing: 0.1px;"
-                    
-                    >RIVIEW</h2>
-                    <img :src="products[0].images[1]" alt="">
-                </div>  
-            </div> -->
-            <!-- <column-chart 
-                :data="countedBrand" 
-                :legend="false" 
-                :colors="this.getRandomColor(this.countedBrand.length)"  
-                title="which brand has the most products that cost less than 40 EUR"
-                xtitle="All Brand have the products that cost less than 40 EUR"
-                ytitle="Count"
-                width="50em"
-                heigth="50em"
-                :stacked="true"
-                :discrete="true"
-                :messages="{empty: 'No data'}"
-            /> -->
+            <statistic-card :products="getAllReviewProducts"></statistic-card>
         </div>
     </layout>
 </template>
