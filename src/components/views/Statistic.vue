@@ -2,7 +2,8 @@
     <layout name="LayoutDefault">
         <div class="layout-main layout-main--statistic">
             <statistic-card :products="getAllReviewProducts"></statistic-card>
-            <statistic-card :products="getAllReviewProducts"></statistic-card>
+            <scroll-link href="#categories" class="text-blue-light">Go To Testimonials</scroll-link>
+            <statistic-card id="categories" :products="getAllReviewProducts"></statistic-card>
         </div>
     </layout>
 </template>
@@ -10,13 +11,16 @@
 <script>
 import axios from 'axios';
 import Layout from '../layouts/Layout';
-import StatisticCard from './_StatisticCard'
+import StatisticCard from './_StatisticCard';
+import scrollLink from '../layouts/_ScrollLink'
+
 
     export default {
         name: 'Statitic',        
         components: {
             Layout,
-            StatisticCard
+            StatisticCard,
+            scrollLink
         },
 
         data() {
