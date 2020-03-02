@@ -1,7 +1,7 @@
 
 <template>
-    <a :href="href" @click.prevent="scroll">
-        <slot></slot>
+    <a :href="href" @click.prevent="scroll" class="statistic-card-container__scroll-link">
+        <span></span><slot></slot>
     </a>
 </template>
 
