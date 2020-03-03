@@ -10,13 +10,20 @@
                     @mouseover="changeImage"
                     @mouseout="changeImage"
                     :alt="product.description">
+                <!-- <img
+                    :src="image"
+                    v-if="hover"
+                    v-touch:touchhold="changeImage"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
                 <img
                     :src="image2"
                     v-if="!hover"
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
-                    :alt="product.description">
+                    :alt="product.description"> -->
             </a>
         </div>
         <div class="product-info">
@@ -37,7 +44,8 @@
 
         data() {
             return {
-                hover: true
+                hover: true,
+                renderKey: 0,
             }
         },
 
@@ -47,14 +55,24 @@
             },
             image2() {
                 return this.product.images[1]
+            },
+            images() {
+                return this.product.images
             }
         },
 
 
         methods: {
             changeImage() {
-                this.hover = !this.hover;
+                // this.hover = !this.hover;
+                this.image = (this.image == this.product.images[0]) ? this.product.images[1] : this.product.images[0]
             },
+        },
+
+        watch: {
+            product() {
+                return this.renderKey++;
+            }
         },
 
     }
