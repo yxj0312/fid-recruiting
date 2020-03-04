@@ -78,21 +78,25 @@ export default {
       return Array.from(sizeCollection).sort()
     },
   },
-  mounted() {
-    axios.get(
-      '/fid-recruiting/fid-task-4-ffront-products.json'
-    )
-    .catch(() => {
-        this.products = [];
-        this.originalProducts = [];
-    })
-    .then(({data}) => {
-      this.products = data;
-      this.originalProducts = data;
-    })
-  },
+  // mounted() {
+  //   this.fetch();
+  // },
 
   methods: {
+    fetch() {
+      axios.get(
+        '/fid-recruiting/fid-task-4-ffront-products.json'
+      )
+      .catch(() => {
+          this.products = [];
+          this.originalProducts = [];
+      })
+      .then(({data}) => {
+        this.products = data;
+        this.originalProducts = data;
+      })
+    },
+
     sizeFilter: function(size){
       this.products = this.originalProducts;
       this.products = this.products.filter(product => product.sizes.includes(size));
@@ -118,6 +122,13 @@ export default {
 
       this.products = test;
     }
+  },
+
+  watch: {
+    keyWord:{
+      handler: 'fetch',
+      immediate: true
+    },
   },
 };
 </script>
