@@ -2,21 +2,27 @@
     <div class="grid-cell grid-cell--border">
         <div class="product-card">
         <div class="product-image">
-            <a :href="product.url" target="_blank"> 
-                <img
-                    :src="image"
-                    v-if="hover"
-                    v-touch:touchhold="changeImage"
-                    @mouseover="changeImage"
-                    @mouseout="changeImage"
-                    :alt="product.description">
-                <img
-                    :src="image2"
-                    v-if="!hover"
-                    v-touch:touchhold="changeImage"
-                    @mouseover="changeImage"
-                    @mouseout="changeImage"
-                    :alt="product.description">
+            <a :href="product.url" target="_blank">
+                <transition name="image1">
+                    <img
+                        :src="image"
+                        v-if="hover"
+                        v-touch:touchhold="changeImage"
+                        @mouseover="changeImage"
+                        @mouseout="changeImage"
+                        :alt="product.description">
+                </transition>
+                
+                
+                <transition name="image2">
+                    <img
+                        :src="image2"
+                        v-if="!hover"
+                        v-touch:touchhold="changeImage"
+                        @mouseover="changeImage"
+                        @mouseout="changeImage"
+                        :alt="product.description">
+                </transition>
             </a>
         </div>
         <div class="product-info">
