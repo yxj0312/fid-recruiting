@@ -1,10 +1,24 @@
 <template>
     <div class="grid-cell grid-cell--border">
         <div class="product-card">
-        <div class="product-image">
+        <div class="product-image" >
             <a :href="product.url" target="_blank">
+                <!-- <img
+                    :src="image"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description"> -->
                 
-                <img
+                <p @mouseover="changeImage"
+                    @mouseout="changeImage" :key="renderkey">
+                   <img
+                    :src="changed"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
+                </p>
+                
+                <!-- <img
                     :src="image"
                     v-if="hover"
                     v-touch:touchhold="changeImage"
@@ -21,7 +35,7 @@
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
-                    :alt="product.description">
+                    :alt="product.description"> -->
                 
             </a>
         </div>
@@ -44,6 +58,7 @@
         data() {
             return {
                 hover: true,
+                renderkey: 0
             }
         },
 
@@ -54,18 +69,25 @@
             image2() {
                 return this.product.images[1]
             },
+            changed() {
+               return  this.hover ? this.product.images[0] : this.product.images[1]
+            }
         },
 
 
         methods: {
             changeImage() {
                 this.hover = !this.hover;
+                // this.renderkey++;
+                console.log(this.changed)
             },
+        },
+
+        watch: {
+            changed() {
+                this.renderkey++
+            }
         },
 
     }
 </script>
-
-<style>
-
-</style>
