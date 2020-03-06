@@ -3,26 +3,26 @@
         <div class="product-card">
         <div class="product-image">
             <a :href="product.url" target="_blank">
-                <transition name="image1">
-                    <img
-                        :src="image"
-                        v-if="hover"
-                        v-touch:touchhold="changeImage"
-                        @mouseover="changeImage"
-                        @mouseout="changeImage"
-                        :alt="product.description">
-                </transition>
+                
+                <img
+                    :src="image"
+                    v-if="hover"
+                    v-touch:touchhold="changeImage"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
                 
                 
-                <transition name="image2">
-                    <img
-                        :src="image2"
-                        v-if="!hover"
-                        v-touch:touchhold="changeImage"
-                        @mouseover="changeImage"
-                        @mouseout="changeImage"
-                        :alt="product.description">
-                </transition>
+                
+                
+                <img
+                    :src="image2"
+                    v-if="!hover"
+                    v-touch:touchhold="changeImage"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description">
+                
             </a>
         </div>
         <div class="product-info">
@@ -65,3 +65,7 @@
 
     }
 </script>
+
+<style>
+
+</style>
