@@ -9,14 +9,13 @@
                     @mouseout="changeImage"
                     :alt="product.description"> -->
                 
-                <p @mouseover="changeImage"
-                    @mouseout="changeImage" :key="renderkey">
+      
                    <img
                     :src="changed"
                     @mouseover="changeImage"
-                    @mouseout="changeImage"
-                    :alt="product.description">
-                </p>
+                    :alt="product.description"
+                    :key="renderkey">
+          
                 
                 <!-- <img
                     :src="image"
