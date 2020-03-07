@@ -12,6 +12,8 @@
       
                    <img
                     :src="changed"
+                    v-touch:touchhold="changeImage"
+                    @mouseout="changeImage"
                     @mouseover="changeImage"
                     :alt="product.description"
                     :key="renderkey">
@@ -76,9 +78,9 @@
 
         methods: {
             changeImage() {
-                this.hover = !this.hover;
-                // this.renderkey++;
-                console.log(this.changed)
+                setTimeout(() => {
+                    this.hover = !this.hover;
+                }, 500);
             },
         },
 
