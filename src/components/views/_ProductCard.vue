@@ -13,8 +13,8 @@
                    <img
                     :src="changed"
                     v-touch:touchhold="changeImage"
-                    @mouseout="changeImage"
-                    @mouseover="changeImage"
+                    @mouseleave="leaveImage"
+                    @mouseenter="enterImage"
                     :alt="product.description"
                     :key="renderkey">
           
@@ -64,12 +64,12 @@
         },
 
         computed: {
-            image() {
-                return this.product.images[0]
-            },
-            image2() {
-                return this.product.images[1]
-            },
+            // image() {
+            //     return this.product.images[0]
+            // },
+            // image2() {
+            //     return this.product.images[1]
+            // },
             changed() {
                return  this.hover ? this.product.images[0] : this.product.images[1]
             }
@@ -77,9 +77,14 @@
 
 
         methods: {
-            changeImage() {
+            enterImage() {
                 setTimeout(() => {
-                    this.hover = !this.hover;
+                    this.hover = false;
+                }, 500);
+            },
+            leaveImage() {
+                setTimeout(() => {
+                    this.hover = true;
                 }, 500);
             },
         },
