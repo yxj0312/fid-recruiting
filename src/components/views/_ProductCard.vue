@@ -12,7 +12,8 @@
       
                    <img
                     :src="changed"
-                    v-touch:touchhold="changeImage"
+                    v-touch:touchhold="enterImage"
+                    v-touch:end="leaveImage"
                     @mouseleave="leaveImage"
                     @mouseenter="enterImage"
                     :alt="product.description"
@@ -85,7 +86,7 @@
             leaveImage() {
                 setTimeout(() => {
                     this.hover = true;
-                }, 500);
+                }, 100);
             },
         },
 
