@@ -17,7 +17,8 @@
                     @mouseleave="leaveImage"
                     @mouseenter="enterImage"
                     :alt="product.description"
-                    :key="renderkey">
+                    :key="renderkey"
+                    >
           
                 
                 <!-- <img
@@ -81,12 +82,12 @@
             enterImage() {
                 setTimeout(() => {
                     this.hover = false;
-                }, 500);
+                }, 400);
             },
             leaveImage() {
                 setTimeout(() => {
                     this.hover = true;
-                }, 100);
+                }, 400);
             },
         },
 
