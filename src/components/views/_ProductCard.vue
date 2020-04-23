@@ -5,7 +5,7 @@
             <a :href="product.url" target="_blank">
                 <img
                     :src="image"
-                    v-if="hover"
+                    v-if="!hover"
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
@@ -13,7 +13,7 @@
                     class="card-image">
                 <img
                     :src="image2"
-                    v-if="!hover"
+                    v-if="hover"
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
@@ -39,7 +39,7 @@
 
         data() {
             return {
-                hover: true
+                hover: false
             }
         },
 
