@@ -10,7 +10,7 @@
                     :alt="product.description"> -->
                 
       
-                   <img
+                   <!-- <img
                     :src="changed"
                     v-touch:touchhold="enterImage"
                     v-touch:end="leaveImage"
@@ -18,28 +18,25 @@
                     @mouseenter="enterImage"
                     :alt="product.description"
                     :key="renderkey"
-                    >
+                    > -->
           
                 
                 <!-- <img
                     :src="image"
-                    v-if="hover"
-                    v-touch:touchhold="changeImage"
-                    @mouseover="changeImage"
-                    @mouseout="changeImage"
-                    :alt="product.description">
-                
-                
-                
-                
-                <img
-                    :src="image2"
                     v-if="!hover"
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
-                    :alt="product.description"> -->
-                
+                    :alt="product.description"
+                    class="card-image">
+                <img
+                    :src="image2"
+                    v-if="hover"
+                    v-touch:touchhold="changeImage"
+                    @mouseover="changeImage"
+                    @mouseout="changeImage"
+                    :alt="product.description"
+                    class="card-image-transition">
             </a>
         </div>
         <div class="product-info">
@@ -60,8 +57,7 @@
 
         data() {
             return {
-                hover: true,
-                renderkey: 0
+                hover: false
             }
         },
 
@@ -79,15 +75,10 @@
 
 
         methods: {
-            enterImage() {
+            changeImage() {
                 setTimeout(() => {
-                    this.hover = false;
-                }, 400);
-            },
-            leaveImage() {
-                setTimeout(() => {
-                    this.hover = true;
-                }, 400);
+                    this.hover = !this.hover;
+                }, 300);
             },
         },
 
