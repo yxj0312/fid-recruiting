@@ -9,14 +9,16 @@
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
-                    :alt="product.description">
+                    :alt="product.description"
+                    class="card-image">
                 <img
                     :src="image2"
                     v-if="!hover"
                     v-touch:touchhold="changeImage"
                     @mouseover="changeImage"
                     @mouseout="changeImage"
-                    :alt="product.description">
+                    :alt="product.description"
+                    class="card-image-transition">
             </a>
         </div>
         <div class="product-info">
@@ -53,7 +55,9 @@
 
         methods: {
             changeImage() {
-                this.hover = !this.hover;
+                setTimeout(() => {
+                    this.hover = !this.hover;
+                }, 300);
             },
         },
 
